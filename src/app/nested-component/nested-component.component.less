@@ -1,0 +1,34 @@
+.tree-node {
+  user-select: none;
+  cursor: pointer;
+
+  .tn-line {
+    font-weight: bold;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    .tn-icon {
+      transition: transform 233ms ease-in-out;
+    }
+
+    .tn-line-title {
+      padding: 3px;
+      border-radius: 3px;
+      flex: auto;
+      color: #4f66ff;
+      transition: background-color 233ms ease-in-out;
+    }
+
+    .tn-line-title:hover {
+      background-color: rgba(191, 230, 255, 0.51);
+    }
+  }
+
+  .tn-content {
+    padding-left: 20px;
+    transition: .3s;
+  }
+}
