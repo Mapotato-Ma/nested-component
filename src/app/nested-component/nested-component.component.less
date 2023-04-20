@@ -1,8 +1,8 @@
-.tree-node {
+.nested-component {
   user-select: none;
   cursor: pointer;
 
-  .tn-line {
+  .nc-line {
     font-weight: bold;
     margin-left: 20px;
     display: flex;
@@ -10,11 +10,11 @@
     gap: 5px;
     cursor: pointer;
 
-    .tn-icon {
+    .nc-icon {
       transition: transform 233ms ease-in-out;
     }
 
-    .tn-line-title {
+    .nc-line-title {
       padding: 3px;
       border-radius: 3px;
       flex: auto;
@@ -22,12 +22,12 @@
       transition: background-color 233ms ease-in-out;
     }
 
-    .tn-line-title:hover {
+    .nc-line-title:hover {
       background-color: rgba(191, 230, 255, 0.51);
     }
   }
 
-  .tn-content {
+  .nc-content {
     padding-left: 20px;
     transition: .3s;
   }

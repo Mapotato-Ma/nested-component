@@ -1,7 +1,7 @@
-<div class="tree-node" *ngFor="let parentNode of treeData; index as i">
-  <div class="tn-line">
+<div class="nested-component" *ngFor="let parentNode of treeData; index as i">
+  <div class="nc-line">
     <svg
-      class="tn-icon"
+      class="nc-icon"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -18,7 +18,7 @@
       ></path>
     </svg>
     <span
-      class="tn-line-title"
+      class="nc-line-title"
       [ngStyle]="{
         'background-color': parentNode.selected ? '#3a8dff' : '',
         color: parentNode.selected ? '#FFFFFF' : ''
@@ -29,7 +29,7 @@
     </span>
   </div>
   <div
-    class="tn-content"
+    class="nc-content"
     appExpandAnimation
     [expandedFlag]="parentNode.expanded"
   >
