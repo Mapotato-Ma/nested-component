@@ -1,0 +1,8 @@
+{
+  "docthis.authorName": "Mapotato",
+  "docthis.includeAuthorTag": true,
+  "docthis.includeDateTag": true,
+  "docthis.includeDescriptionTag": true,
+  "docthis.returnsTag": true,
+  "docthis.inferTypesFromNames": true
+}

@@ -33,8 +33,10 @@
     appExpandAnimation
     [expandedFlag]="parentNode.expanded"
   >
-    <app-nested-component
-      [treeData]="parentNode.children"
-    ></app-nested-component>
+    <div>
+      <app-nested-component
+        [treeData]="parentNode.children"
+      ></app-nested-component>
+    </div>
   </div>
 </div>

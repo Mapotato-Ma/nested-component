@@ -1,10 +1,4 @@
-import {
-  Directive,
-  Input,
-  ElementRef,
-  Renderer2,
-  SimpleChanges,
-} from '@angular/core';
+import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appExpandAnimation]',
@@ -18,15 +12,11 @@ export class ExpandAnimationDirective {
     private renderer: Renderer2 // 修改样式
   ) {
     // 初始化设置元素的2D变换原点以及过渡效果
+    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'grid');
     this.renderer.setStyle(
       this.elementRef.nativeElement,
       'transition',
-      'all 233ms ease-in-out'
-    );
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'transformOrigin',
-      'center top'
+      'grid-template-rows 233ms ease-in-out'
     );
   }
   // 宿主组件应用进来的展开状态
@@ -34,31 +24,22 @@ export class ExpandAnimationDirective {
 
   ngOnInit() {
     this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'height',
-      this.expandedFlag ? 'auto' : '0'
+      this.elementRef.nativeElement.firstElementChild,
+      'overflow',
+      'hidden'
     );
+    this.refreshExpandStatus();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.renderDom();
+  ngOnChanges() {
+    this.refreshExpandStatus();
   }
 
-  renderDom() {
+  refreshExpandStatus() {
     this.renderer.setStyle(
       this.elementRef.nativeElement,
-      'transform',
-      this.expandedFlag ? 'scaleY(1)' : 'scaleY(0)'
-    );
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'opacity',
-      this.expandedFlag ? '1' : '0'
-    );
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'height',
-      this.expandedFlag ? 'auto' : '0'
+      'grid-template-rows',
+      this.expandedFlag ? '1fr' : '0fr'
     );
   }
 }
